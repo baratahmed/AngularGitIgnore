@@ -1,0 +1,20 @@
+<h1 class="text-center text-success display-4 wow wobble" data-wow-duration="3s" data-wow-delay="3s">Create a Page</h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+    <div class="form-group">
+        <input name="pageName" #pageName="ngModel" [(ngModel)]="service.formData.pageName" class="form-control" placeholder="Page Name" required>
+        <div *ngIf="pageName.invalid && pageName.touched" class="validation-error">This is a required field.</div>
+    </div>
+    <div class="form-group">
+        <input name="pageTitle" #pageTitle="ngModel" [(ngModel)]="service.formData.pageTitle" class="form-control" placeholder="Page Title" required>
+        <div *ngIf="pageTitle.invalid && pageTitle.touched" class="validation-error">This is a required field.</div>
+    </div>
+
+    <div class="form-group">
+        <textarea name="pageDescription" #pageDescription="ngModel"  [(ngModel)]="service.formData.pageDescription" id="" cols="30" rows="10" class="form-control" placeholder="Page Description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-warning wow bounce" data-wow-duration="3s" data-wow-delay="3s">Submit</button>
+    </div>
+</form>

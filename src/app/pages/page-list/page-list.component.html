@@ -1,0 +1,16 @@
+<table class="table table-hover">
+    <thead>
+        <th>Page(s)</th>
+        <th>Page Title</th>
+        <th>Page Description</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let page of list">
+            <td><button class="btn btn-primary" (click)="onEdit(page)">{{page.pageName}}</button></td>
+            <td (click)="onEdit(page)">{{page.pageTitle}}</td>
+            <td (click)="onEdit(page)">{{page.pageDescription}}</td>
+            <td><a class="btn text-danger" (click)="onDelete(page.id)"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </tbody>
+</table>
